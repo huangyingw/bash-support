@@ -41,3 +41,8 @@ call Bash_SetMapLeader ()
 "-------------------------------------------------------------------------------
 call Bash_ResetMapLeader ()
 "
+"
+" automatically give executable permissions if file begins with #! and contains
+" '/bin/' in the path
+"
+au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent execute "!chmod a+x <afile>" | endif | endif
