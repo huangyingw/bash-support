@@ -1,3 +1,8 @@
 [remote "github"]
     url = git@github.com:vim-scripts/bash-support.vim.git
     fetch = +refs/heads/*:refs/remotes/github/*
+[remote "bitbucket"]
+    url = git@bitbucket.org:huangyingw/bash-support.vim.git
+    fetch = +refs/heads/*:refs/remotes/bitbucket/*
+[push]
+    remote = bitbucket
