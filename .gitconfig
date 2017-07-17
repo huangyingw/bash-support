@@ -1,8 +1,12 @@
 [remote "vim-scripts"]
     url = git@github.com:vim-scripts/bash-support.vim.git
     fetch = +refs/heads/*:refs/remotes/vim-scripts/*
+[remote "github"]
+    url = git@github.com:huangyingw/bash-support.git
+    fetch = +refs/heads/*:refs/remotes/github/*
 [push]
     remote = origin
+    remote = github
 [gsync]
     remote = vim-scripts
     branch = master
