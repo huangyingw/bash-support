@@ -10,3 +10,8 @@
 [gsync]
     remote = vim-scripts
     branch = master
+[branch "dev.fix"]
+    remote = origin
+    merge = refs/heads/dev.fix
+[commit]
+    message = n
