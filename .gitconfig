@@ -8,8 +8,7 @@
     remote = origin
     remote = github
 [gsync]
-    remote = vim-scripts
-    branch = master
+    remote = vim-scripts/master
 [branch "dev"]
     remote = origin
     merge = refs/heads/dev
