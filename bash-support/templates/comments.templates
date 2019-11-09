@@ -16,7 +16,6 @@
 #       RETURNS:  
 #-------------------------------------------------------------------------------
 == Comments.file header == start, map:ch ==
-#!/bin/bash - 
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 cd "$SCRIPTPATH"
