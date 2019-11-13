@@ -1,3 +1,4 @@
+#!/bin/bash
 #===============================================================================
 #          FILE:  wrapper.sh
 #         USAGE:  ./wrapper.sh scriptname [cmd-line-args] 
