@@ -1,0 +1,65 @@
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..97a8baa
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++doc/tags-te
+diff --git a/bash-support/scripts/wrapper.sh b/bash-support/scripts/wrapper.sh
+index 7a33b0a..b49b8be 100644
+--- a/bash-support/scripts/wrapper.sh
++++ b/bash-support/scripts/wrapper.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/zsh
+ #===============================================================================
+ #          FILE:  wrapper.sh
+ #         USAGE:  ./wrapper.sh scriptname [cmd-line-args] 
+diff --git a/bash-support/templates/comments.templates b/bash-support/templates/comments.templates
+index 34f8a0e..66d8e39 100644
+--- a/bash-support/templates/comments.templates
++++ b/bash-support/templates/comments.templates
+@@ -16,26 +16,11 @@
+ #       RETURNS:  
+ #-------------------------------------------------------------------------------
+ == Comments.file header == start, map:ch ==
+-#!/bin/bash - 
+-#===============================================================================
+-#
+-#          FILE: |FILENAME|
+-# 
+-#         USAGE: ./|FILENAME| 
+-# 
+-#   DESCRIPTION: 
+-# 
+-#       OPTIONS: ---
+-#  REQUIREMENTS: ---
+-#          BUGS: ---
+-#         NOTES: ---
+-#        AUTHOR: |AUTHOR| (|AUTHORREF|), |EMAIL|
+-#  ORGANIZATION: |ORGANIZATION|
+-#       CREATED: |DATE| |TIME|
+-#      REVISION:  ---
+-#===============================================================================
++#!/bin/zsh
++SCRIPT=$(realpath "$0")
++SCRIPTPATH=$(dirname "$SCRIPT")
++cd "$SCRIPTPATH"
+ 
+-set -o nounset                              # Treat unset variables as an error
+ <CURSOR>
+ == ENDTEMPLATE ==
+ 
+diff --git a/ftplugin/sh.vim b/ftplugin/sh.vim
+index cfbbb42..1b99c00 100644
+--- a/ftplugin/sh.vim
++++ b/ftplugin/sh.vim
+@@ -41,3 +41,8 @@ call Bash_SetMapLeader ()
+ "-------------------------------------------------------------------------------
+ call Bash_ResetMapLeader ()
+ "
++"
++" automatically give executable permissions if file begins with #! and contains
++" '/bin/' in the path
++"
++au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent execute "!chmod a+x <afile>" | endif | endif
