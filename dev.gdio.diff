@@ -1,10 +1,15 @@
-diff --git a/.gitignore b/.gitignore
-new file mode 100644
-index 0000000..97a8baa
---- /dev/null
-+++ ./.gitignore
-@@ -0,0 +1 @@
-+doc/tags-te
+diff --git a/bash-support/rc/customization.vimrc b/bash-support/rc/customization.vimrc
+index a56a20c..59e5f27 100644
+--- ./bash-support/rc/customization.vimrc
++++ ./bash-support/rc/customization.vimrc
+@@ -61,7 +61,6 @@ endif
+ set autoindent                  " copy indent from current line
+ set autoread                    " read open files again when changed outside Vim
+ set autowrite                   " write a modified buffer on each :next , ...
+-set backspace=indent,eol,start  " backspacing over everything in insert mode
+ set backup                      " keep a backup file
+ set browsedir=current           " which directory to use for the file browser
+ set complete+=k                 " scan the files given with the 'dictionary' option
 diff --git a/bash-support/scripts/wrapper.sh b/bash-support/scripts/wrapper.sh
 index 7a33b0a..b49b8be 100644
 --- ./bash-support/scripts/wrapper.sh
