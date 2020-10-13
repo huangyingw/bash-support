@@ -61,7 +61,6 @@ endif
 set autoindent                  " copy indent from current line
 set autoread                    " read open files again when changed outside Vim
 set autowrite                   " write a modified buffer on each :next , ...
-set backspace=indent,eol,start  " backspacing over everything in insert mode
 set backup                      " keep a backup file
 set browsedir=current           " which directory to use for the file browser
 set complete+=k                 " scan the files given with the 'dictionary' option
@@ -207,4 +206,3 @@ endfunction
 "-------------------------------------------------------------------------------
  noremap <silent> <F11>  <Esc><Esc>:Tlist<CR>
 inoremap <silent> <F11>  <Esc><Esc>:Tlist<CR>
-
