@@ -9,7 +9,7 @@
     remote = github
 [gsync]
     remote = vim-scripts
-    branch = master
+    target = vim-scripts/master
 [branch "dev"]
     remote = origin
     merge = refs/heads/dev
