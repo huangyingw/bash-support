@@ -24,7 +24,7 @@ diff --git a/bash-support/templates/comments.templates b/bash-support/templates/
 index 34f8a0e..66d8e39 100644
 --- ./bash-support/templates/comments.templates
 +++ ./bash-support/templates/comments.templates
-@@ -16,26 +16,11 @@ § =============================================================
+@@ -16,26 +16,11 @@
  #       RETURNS:  
  #-------------------------------------------------------------------------------
  == Comments.file header == start, map:ch ==
