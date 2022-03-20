@@ -1,3 +1,29 @@
+diff --git a/autoload/mmtemplates/core.vim b/autoload/mmtemplates/core.vim
+index 249228a..8c41f15 100644
+--- ./autoload/mmtemplates/core.vim
++++ ./autoload/mmtemplates/core.vim
+@@ -2516,7 +2516,10 @@ function! s:InsertIntoBuffer ( text, placement, indentation, flag_mode )
+ 			exe ':1'
+ 			call s:OpenFold('start')
+ 			let pos1 = 1
++            try
+                 silent put! = text
++            catch
++            endtry
+ 			let pos2 = line(".")
+ 			"
+ 		elseif placement == 'append' || placement == 'insert'
+@@ -2609,7 +2612,10 @@ function! s:InsertIntoBuffer ( text, placement, indentation, flag_mode )
+ 	" proper indenting
+ 	if indentation
+ 		silent exe ":".pos1
++        try
+             silent exe "normal! ".( pos2-pos1+1 )."=="
++        catch
++        endtry
+ 	endif
+ 	"
+ 	return [ pos1, pos2 ]
 diff --git a/bash-support/rc/customization.vimrc b/bash-support/rc/customization.vimrc
 index a56a20c..59e5f27 100644
 --- ./bash-support/rc/customization.vimrc
