@@ -2516,7 +2516,10 @@ function! s:InsertIntoBuffer ( text, placement, indentation, flag_mode )
 			exe ':1'
 			call s:OpenFold('start')
 			let pos1 = 1
-			silent put! = text
+            try
+                silent put! = text
+            catch
+            endtry
 			let pos2 = line(".")
 			"
 		elseif placement == 'append' || placement == 'insert'
@@ -2609,7 +2612,10 @@ function! s:InsertIntoBuffer ( text, placement, indentation, flag_mode )
 	" proper indenting
 	if indentation
 		silent exe ":".pos1
-		silent exe "normal! ".( pos2-pos1+1 )."=="
+        try
+            silent exe "normal! ".( pos2-pos1+1 )."=="
+        catch
+        endtry
 	endif
 	"
 	return [ pos1, pos2 ]
