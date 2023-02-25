@@ -1,3 +1,25 @@
+diff --git a/.gitconfig b/.gitconfig
+new file mode 100644
+--- /dev/null
++++ ./.gitconfig
+@@ -0,0 +1,17 @@
++[remote "vim-scripts"]
++    url = git@github.com:vim-scripts/bash-support.vim.git
++    fetch = +refs/heads/*:refs/remotes/vim-scripts/*
++[remote "github"]
++    url = git@github.com:huangyingw/bash-support.git
++    fetch = +refs/heads/*:refs/remotes/github/*
++[push]
++    remote = origin
++    remote = github
++[gsync]
++    remote = vim-scripts
++    target = vim-scripts/master
++[branch "dev"]
++    remote = origin
++    merge = refs/heads/dev
++[gdif]
++    ignore = .gitignore
 diff --git a/autoload/mmtemplates/core.vim b/autoload/mmtemplates/core.vim
 --- ./autoload/mmtemplates/core.vim
 +++ ./autoload/mmtemplates/core.vim
