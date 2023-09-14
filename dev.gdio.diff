@@ -68,7 +68,7 @@ diff --git a/bash-support/scripts/wrapper.sh b/bash-support/scripts/wrapper.sh
 diff --git a/bash-support/templates/comments.templates b/bash-support/templates/comments.templates
 --- ./bash-support/templates/comments.templates
 +++ ./bash-support/templates/comments.templates
-@@ -16,26 +16,11 @@
+@@ -16,26 +16,13 @@
  #       RETURNS:  
  #-------------------------------------------------------------------------------
  == Comments.file header == start, map:ch ==
@@ -94,8 +94,10 @@ diff --git a/bash-support/templates/comments.templates b/bash-support/templates/
 +SCRIPT=$(realpath "$0")
 +SCRIPTPATH=$(dirname "$SCRIPT")
 +cd "$SCRIPTPATH"
++
  
 -set -o nounset                              # Treat unset variables as an error
++cd -
  <CURSOR>
  == ENDTEMPLATE ==
  
